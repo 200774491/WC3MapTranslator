@@ -24,7 +24,7 @@
         "test": "npm run build && mocha",
         "test-nyc": "npm run build && nyc mocha",
         "test-travis": "npm run build && ./node_modules/istanbul/lib/cli.js cover ./node_modules/mocha/bin/_mocha --include-all-sources true --root ./lib -- -R spec ./test/*.js",
-        "install": "npm install && npm run build"
+        "install": "npm run build"
     },
     "engines": {
         "node": ">=14",
