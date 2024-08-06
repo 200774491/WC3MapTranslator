@@ -15,6 +15,7 @@ const ieee754 = require('ieee754'),
     charToHex = (character: string): string => {
         return '0x' + character.charCodeAt(0).toString(16);
     };
+import { Buffer } from 'buffer';
 
 export class HexBuffer {
     private _buffer = [];
