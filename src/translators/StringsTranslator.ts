@@ -14,7 +14,7 @@ export abstract class StringsTranslator {
             outBufferToWar.addNewLine();
             outBufferToWar.addChars('{');
             outBufferToWar.addNewLine();
-            outBufferToWar.addChars(stringsJson[key]);
+            outBufferToWar.addString(stringsJson[key]);
             outBufferToWar.addNewLine();
             outBufferToWar.addChars('}');
             outBufferToWar.addNewLine();
