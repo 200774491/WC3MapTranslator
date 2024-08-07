@@ -1,4 +1,5 @@
 import roundTo from 'round-to';
+import { Buffer } from 'buffer';
 
 export class W3Buffer {
 
@@ -36,9 +37,7 @@ export class W3Buffer {
         }
         this._offset += 1; // consume the \0 end-of-string delimiter
 
-        return string.map((ch) => {
-            return String.fromCharCode(ch);
-        }).join('');
+        return Buffer.from(string).toString('utf-8');
     }
 
     public readChars(len: number = 1): string {
