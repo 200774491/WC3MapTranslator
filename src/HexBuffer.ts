@@ -20,7 +20,7 @@ import { Buffer } from 'buffer';
 export class HexBuffer {
     private _buffer = [];
 
-    public addString(str: string) {
+    public addString(str: string, nullTerminator: boolean = true) {
         // Write each char to the buffer
         // "ascii" | "utf8" | "utf-8" | "utf16le" | "ucs2"
         // | "ucs-2" | "base64" | "latin1" | "binary" | "hex"
@@ -29,7 +29,9 @@ export class HexBuffer {
         for (let i = 0; i < buf.length; i++) {
             this._buffer.push('0x' + buf[i].toString(16));
         }
-        this.addNullTerminator();
+        if (nullTerminator) {
+            this.addNullTerminator();
+        }
     }
 
     public addNewLine() {
